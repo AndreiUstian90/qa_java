@@ -16,13 +16,7 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
-
-    //прочитал внимательнее заданее после совета и понял, что забыл изолировать класс Lion от класса Feline. Сделал это с помощью конструктора
-
-    public Lion(Feline feline) {
-        this.feline = feline;
-    }
+   Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();

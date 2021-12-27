@@ -9,7 +9,9 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
@@ -32,7 +34,8 @@ public class CatTest {
     @Test
     public void  checkCatGetFood() throws Exception {
         Cat cat = new Cat(feline);
-        Mockito.when(feline.eatMeat()).thenReturn(Collections.singletonList("Хишник"));
-        System.out.println(cat.getFood());
+        List<String> expected = cat.getFood();
+        List<String> actual = Arrays.asList();
+        Assert.assertEquals(expected, actual);
     }
 }
