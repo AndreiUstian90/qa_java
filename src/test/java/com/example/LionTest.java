@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @RunWith(Parameterized.class)
 public class LionTest {
 
+    @Mock
     Feline feline = new Feline();
 
     private final String checkedSex;
