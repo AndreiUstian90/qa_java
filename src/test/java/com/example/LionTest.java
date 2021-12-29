@@ -11,12 +11,11 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionTest {
 
-    @Mock
     Feline feline = new Feline();
 
     private final String checkedSex;
@@ -25,7 +24,7 @@ public class LionTest {
 
     @Before
     public void initialize() throws Exception {
-        lion = new Lion(checkedSex);
+        lion = new Lion(checkedSex, feline);
     }
 
     public LionTest(String checkedSex, boolean expectedResult) {
@@ -49,17 +48,17 @@ public class LionTest {
 
     @Test
     public void checkLionGetFood() throws Exception {
-        Lion lion = new Lion(checkedSex);
+        Lion lion = new Lion(checkedSex, feline);
         List<String> expected = lion.getFood();
         List<String> actual = Arrays.asList("Животные", "Птицы", "Рыба");
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void checkLionGetKittens() throws Exception {
-        Lion lion = new Lion(checkedSex);
+        Lion lion = new Lion(checkedSex, feline);
         int expected = lion.getKittens();
         int actual = feline.getKittens();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }

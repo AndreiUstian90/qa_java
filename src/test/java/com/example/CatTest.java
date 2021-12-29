@@ -15,10 +15,6 @@ import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Mock
     Feline feline;
